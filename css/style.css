@@ -13811,7 +13811,65 @@ body {
 	z-index: 2001 !important;
 }
 
-.img-gallery{
-	width: 304px;
-	height: 236px;
+
+
+.galeria{
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
+
+/* @media screen and (min-width:768px) {
+	.img-gallery{
+		width: 236px;
+		height: 200px;
+	}
+} */
+
+
+
+.subir{
+	background-color: #41A451;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	border-radius: 5px;
+	margin-left: 40px;
+}
+
+.subir i {
+	color: white;
+	font-size: 30px;
+	font-style: normal;
+}
+
+
+
+#sendWhatsapp{
+	font-size: 3rem;
+	border-radius: 3px;
+	width: 100%;
+	padding: 0px;
+}
+
+#sendWhatsapp i {
+	font-style: normal;
+}
+
+
+@media only screen and (max-width: 767px) {
+
+	.img-thumbnail{
+		width: 100%;
+		height: auto !important;
+	}
+  }
+
+
+  @media screen and (min-width: 768px){
+	.img-thumbnail{
+		width: 100%;
+		height: 140px !important;
+	}
+  }
+
+
