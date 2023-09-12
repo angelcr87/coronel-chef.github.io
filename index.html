@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta property="og:image" content="images/logo borde.svg">
   <link rel="icon" href="images/logo borde.svg" type="image/x-icon">
   <link rel="stylesheet" type="text/css"
     href="//fonts.googleapis.com/css?family=Poppins:300,300i,400,500,600,700,800,900,900i%7CPT+Serif:400,700">
@@ -94,8 +95,7 @@
           <div class="box-default">
             <h1 class="box-default-title">Welcome</h1>
             <div class="box-default-decor"></div>
-            <p class="big box-default-text">Our restaurant offers full-service dining with breathtaking views seen from
-              our indoor covered patio and our outdoor sundeck.</p>
+            <p class="big box-default-text">From the comfort of your home enjoy a personalized gastronomic experience with a chef at home.</p>
           </div>
         </div>
       </div>
@@ -108,31 +108,31 @@
               <div>
                 <p class="booking-title">Name</p>
                 <div class="form-wrap">
-                  <input class="form-input" id="booking-name" type="text" name="name" data-constraints="@Required">
+                  <input class="form-input" id="booking-name" required type="text" name="name" data-constraints="@Required">
                   <label class="form-label" for="booking-name">Your name</label>
                 </div>
               </div>
               <div>
                 <p class="booking-title">Phone</p>
                 <div class="form-wrap">
-                  <input class="form-input" id="booking-phone" type="text" name="phone" data-constraints="@Numeric">
+                  <input class="form-input" id="booking-phone" required type="text" name="phone" data-constraints="@Numeric">
                   <label class="form-label" for="booking-phone">Your phone number</label>
                 </div>
               </div>
               <div>
                 <p class="booking-title">Date</p>
                 <div class="form-wrap form-wrap-icon"><span class="icon mdi mdi-calendar-text"></span>
-                  <input class="form-input" id="booking-date" type="text" name="date" data-constraints="@Required"
+                  <input class="form-input" required id="booking-date" type="text" name="date" data-constraints="@Required"
                     data-time-picker="date">
                 </div>
               </div>
               <div>
                 <p class="booking-title">no. of people</p>
                 <div class="form-wrap">
-                  <select data-placeholder="2" id="booking-count">
+                  <select data-placeholder="2" id="booking-count" required>
                     <option label="placeholder"></option>
                     <option>1</option>
-                    <option>2</option>
+                    <option selected>2</option>
                     <option>3</option>
                     <option>4</option>
                     <option>5</option>
@@ -159,11 +159,13 @@
               </div>
             </div>
             <div class="col-lg-6 col-xl-5 wow fadeInRight">
-              <h2>About Me</h2>
-              <p>Pesto is a family owned and operated Italian Restaurant offering a combination of fresh ingredients and
-                authentic Italian cooking.</p>
-              <p>We will make sure you are served the most authentic and fresh Italian dishes, while offering the best
-                customer service. Our kitchen is committed to providing our guests with the best Italian Cuisine.</p>
+              <h2>About Us</h2>
+              <p>It will be like bringing the restaurant home,
+                You can enjoy a unique and comfortable experience with family and friends,
+                customize the details of your menus and celebrate with your loved ones
+                bringing a chef who will be able to please you and help you have a pleasant and wonderful experience.</p>
+              <!-- <p>We will make sure you are served the most authentic and fresh Italian dishes, while offering the best
+                customer service. Our kitchen is committed to providing our guests with the best Italian Cuisine.</p> -->
               <!-- <img src="images/signature-1-140x50.png" alt="" width="140" height="50"/> -->
             </div>
           </div>
@@ -209,7 +211,7 @@
                         </h5>
                         </p>
 
-                        <div class="container galeria">
+                        <!-- <div class="container galeria">
                           <div class="row">
                             <div class="col-md-3">
                               <a data-src="images/wedding.jpg" data-fancybox="services" data-caption="Texto Opcional">
@@ -232,7 +234,7 @@
                               </a>
                             </div>
                           </div>
-                        </div>
+                        </div> -->
 
 
                         <p>
@@ -1597,16 +1599,29 @@
 
       $('#sendWhatsapp').on('click', function (event) {
 
+
         var name = $('#booking-name').val();
         var phone = $('#booking-phone').val();
         var date = $('#booking-date').val();
         var count = $('#booking-count').val();
-        var url = "https://api.whatsapp.com/send?phone=+529993182963&text=";
-        var mensaje = 'Hi, my name is ' + name + ', I would like to request your service for ' + count + ' people on the date ' + date;
-        mansaje = mensaje.replace(" ", "%20");
-        url = url + mensaje;
-        window.open(url, '_blank');
-        return false;
+
+        if(name == "" || phone == "" || date =="" || count =="" )
+        {
+
+          alert("Faltan datos validos para enviar la solicitud");
+        }
+        else
+        {       
+
+          var url = "https://api.whatsapp.com/send?phone=+529993182963&text=";
+          var mensaje = 'Hi, my name is ' + name + ', I would like to request your service for ' + count + ' people on the date ' + date;
+          mansaje = mensaje.replace(" ", "%20");
+          url = url + mensaje;
+          window.open(url, '_blank');
+          return false;
+        }
+
+      
 
       });
 
