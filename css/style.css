@@ -7366,7 +7366,7 @@ html.tablet .ui-to-top {
 .rd-navbar-fixed .rd-navbar-brand {
 	position: relative;
 	margin-left: 20px;
-	overflow: hidden;
+	/* overflow: hidden; */
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	text-align: left;
